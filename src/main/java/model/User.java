@@ -28,4 +28,8 @@ public class User {
         this.email = email;
         this.login = login;
     }
+
+    public User(){
+
+    }
 }

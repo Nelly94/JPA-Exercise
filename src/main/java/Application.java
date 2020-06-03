@@ -1,45 +1,42 @@
+import dao.ItemDAO;
+import dao.OrcImplDAO;
+import dao.UserDAO;
 import model.Item;
 import model.LevelElementId;
 import model.Orc;
 import model.User;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 public class Application {
 
     public static void main(String[] args){
 
-        User user = new User("user@gmail.com", "userpass");
+        UserDAO userDao = new UserDAO();
+        OrcImplDAO orcDao = new OrcImplDAO();
+        ItemDAO itemDao = new ItemDAO();
 
-        Orc orc = new Orc("Bravatos", 100, 500, 52);
-        orc.setRage("Mandolian");
-        orc.setUser(user);
-        //user.getCharacters().add(orc);
+        //Create users
+        User user1 = new User("user1@gmail.com", "user1");
+        userDao.create(user1);
 
+        User user2 = new User("user2@gmail.com", "user2");
+        userDao.create(user2);
+
+        //Create orc
+        Orc bravatos = new Orc("Bravatos", 100, 500, 52);
+        bravatos.setUser(user1);
+        orcDao.create(bravatos);
+        //Update user to add orc as its character
+        user1.getCharacters().add(bravatos);
+        userDao.update(user1);
+
+        //Create item
         Item sword = new Item(new LevelElementId("flamming sword", 68));
-        sword.getCharacters().add(orc);
-        orc.getItems().add(sword);
-
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaexercise");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
-
-        try {
-            em.persist(user);
-            em.persist(sword);
-            em.persist(orc);
-
-            tx.commit();
-        }catch (Exception e){
-            e.printStackTrace();
-            tx.rollback();
-        }finally {
-            em.close();
-            emf.close();
-        }
+        itemDao.create(sword);
+        //Update character
+        bravatos.getItems().add(sword);
+        orcDao.update(bravatos);
+        //Update item
+        //sword.getCharacters().add(bravatos);
+        //itemDao.update(sword);
     }
 }

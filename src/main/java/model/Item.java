@@ -26,4 +26,8 @@ public class Item extends LevelElement{
     public Item(LevelElementId levelElementId) {
         super(levelElementId);
     }
+
+    public Item(){
+
+    }
 }
