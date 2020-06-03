@@ -17,7 +17,7 @@ public class Application {
         Orc orc = new Orc("Bravatos", 100, 500, 52);
         orc.setRage("Mandolian");
         orc.setUser(user);
-        user.getCharacters().add(orc);
+        //user.getCharacters().add(orc);
 
         Item sword = new Item(new LevelElementId("flamming sword", 68));
         sword.getCharacters().add(orc);
@@ -26,12 +26,20 @@ public class Application {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaexercise");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
+        tx.begin();
 
-        em.persist(user);
-        //em.persist(sword);
-        //em.persist(orc);
+        try {
+            em.persist(user);
+            em.persist(sword);
+            em.persist(orc);
 
-        tx.commit();
-        em.close();
+            tx.commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            tx.rollback();
+        }finally {
+            em.close();
+            emf.close();
+        }
     }
 }

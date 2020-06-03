@@ -14,6 +14,11 @@ public abstract class LevelElement {
     private int level;
 
     public LevelElement(LevelElementId levelElementId){
+        this.name = levelElementId.getName();
+        this.level = levelElementId.getLevel();
+    }
+
+    public LevelElement(){
 
     }
 

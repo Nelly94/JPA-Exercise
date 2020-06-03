@@ -16,7 +16,8 @@ import java.util.List;
 public abstract class Character {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="CharacterGen", sequenceName="CHARACTER_SEQ")
+    @GeneratedValue( generator = "CharacterGen" )
     private Long id;
 
     @Column(name="name")
@@ -37,9 +38,9 @@ public abstract class Character {
 
     @ManyToMany
     @JoinTable( name="CHARACTER_ITEMS",
-            joinColumns = {@JoinColumn(name="item_name"),
-                        @JoinColumn(name="item_level")},
-            inverseJoinColumns = @JoinColumn(name="character_id"))
+            inverseJoinColumns = {@JoinColumn(name="item_level"),
+                        @JoinColumn(name="item_name")},
+            joinColumns = @JoinColumn(name="character_id"))
     private List<Item> items = new ArrayList<>();
 
     public Character(String name, int health, int strength, int level){
