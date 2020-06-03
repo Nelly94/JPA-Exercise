@@ -2,7 +2,6 @@ import dao.ItemDAO;
 import dao.OrcImplDAO;
 import dao.UserDAO;
 import model.Item;
-import model.LevelElementId;
 import model.Orc;
 import model.User;
 
@@ -30,13 +29,13 @@ public class Application {
         userDao.update(user1);
 
         //Create item
-        Item sword = new Item(new LevelElementId("flamming sword", 68));
+        Item sword = new Item("flaming sword", 54);
         itemDao.create(sword);
         //Update character
         bravatos.getItems().add(sword);
         orcDao.update(bravatos);
         //Update item
-        //sword.getCharacters().add(bravatos);
-        //itemDao.update(sword);
+        sword.getCharacters().add(bravatos);
+        itemDao.update(sword);
     }
 }

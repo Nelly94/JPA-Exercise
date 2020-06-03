@@ -79,22 +79,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="419" height="438" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1591195593451" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591195692249">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1591197585669">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591195692249" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591195692248">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591197585669" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1591197585668">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591195692248" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591195692248">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591197585668" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1591197585668">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591195692248" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591195692248">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591197585668" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1591197585668">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591195692248" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591197585668" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591195604990">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -125,7 +125,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
-          <line>35</line>
+          <line>34</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

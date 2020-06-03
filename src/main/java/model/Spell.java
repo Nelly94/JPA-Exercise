@@ -19,7 +19,7 @@ public class Spell extends LevelElement {
     @Column(name="damage")
     private int damage;
 
-    public Spell(LevelElementId levelElementId) {
-        super(levelElementId);
+    public Spell(String name, int level) {
+        super(name, level);
     }
 }

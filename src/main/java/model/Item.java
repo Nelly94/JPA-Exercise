@@ -23,8 +23,8 @@ public class Item extends LevelElement{
     @ManyToMany(mappedBy = "items")
     private List<Character> characters = new ArrayList<>();
 
-    public Item(LevelElementId levelElementId) {
-        super(levelElementId);
+    public Item(String name, int level){
+        super(name, level);
     }
 
     public Item(){
